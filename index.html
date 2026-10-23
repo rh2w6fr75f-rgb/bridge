@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20292b">
+  <title>Bridge Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">BB</span><div><h1>Bridge Builder</h1><p>Structural design puzzle · Crossing 01</p></div></div>
+      <div class="budget-box"><span id="budget-label">PROJECT BUDGET</span><strong id="budget">$1,000</strong></div>
+    </header>
+    <section class="game-panel" aria-label="Bridge construction game">
+      <div class="toolbar">
+        <div class="toolbar-main">
+          <div id="materials" class="materials" role="group" aria-label="Construction material"></div>
+          <div class="config">
+            <label class="thickness-label" for="thickness">THICKNESS<select id="thickness"><option value="1">Standard</option><option value="1.5">Reinforced</option><option value="2">Heavy</option></select></label>
+            <button id="budget-mode" class="mode-toggle" aria-pressed="false">Unlimited budget <span>OFF</span></button>
+            <button id="undo" class="subtle" title="Undo last beam">Undo</button>
+            <button id="test" class="primary">Test bridge</button>
+            <button id="reset" class="subtle">Reset</button>
+          </div>
+        </div>
+        <div class="ledger" aria-live="polite"><strong>Materials spent <span id="spent">$0</span></strong><div id="breakdown"></div></div>
+      </div>
+      <div class="canvas-wrap"><canvas id="game" width="1000" height="570" aria-label="Bridge building area"></canvas></div>
+      <section id="failure-card" class="failure-card" hidden aria-live="assertive">
+        <div class="failure-icon">!</div><div class="failure-copy"><strong id="failure-title">Member failure</strong><p id="failure-detail"></p><div class="wear-track"><span id="wear-bar"></span></div><small id="wear-label">Damage at failure</small></div>
+      </section>
+      <div class="status-row"><div class="status-dot"></div><p id="message" role="status" aria-live="polite">Select an anchor, then add a joint or connect it to the other side.</p><span id="mode">BUILD MODE</span></div>
+    </section>
+    <footer><span><b>BUILD</b> Select two joints to connect · Click open ground to add a joint</span><span>Right-click a beam to remove · <b>ESC</b> deselects</span></footer>
+  </main>
+  <script src="src/main.js"></script>
+</body>
+</html>
