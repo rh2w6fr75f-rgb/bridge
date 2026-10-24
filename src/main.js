@@ -54,8 +54,8 @@ function tick(){if(mode!=='test')return;
  for(const j of joints){if(j.fixed)continue;const vx=(j.x-j.px)*.995,vy=(j.y-j.py)*.995;j.px=j.x;j.py=j.y;j.x+=vx;j.y+=vy+145*STEP*STEP}
  const load=getCarPosition(routeDistance);
  if(load){const [a,b,t]=load;car.x=load[3];car.y=load[4];for(const [id,w] of [[a,1-t],[b,t]])if(!joints[id].fixed)joints[id].py+=.85*w;
-  const deck=beams.find(v=>!v.broken&&(v.a===a&&v.b===b||v.a===b&&v.b===a));
-  if(deck){const len=Math.hypot(joints[a].x-joints[b].x,joints[a].y-joints[b].y),demand=(len/100)**2*.04,capacity=capacityFor(deck);deck.stress=Math.max(deck.stress,demand);deck.wear=Math.max(deck.wear,Math.min(.98,deck.stress/capacity));if(demand>capacity){failBeam(deck,'Excessive span load',demand,car);return}}
+  const deck=beams.find(v=>!v.broken&&v.material==='concrete'&&(v.a===a&&v.b===b||v.a===b&&v.b===a));
+  if(deck){const len=Math.hypot(joints[a].x-joints[b].x,joints[a].y-joints[b].y),loadFactor=Math.sin(Math.PI*t)**2,demand=(len/100)**2*.04*loadFactor,capacity=capacityFor(deck);deck.stress=Math.max(deck.stress,demand);deck.wear=Math.max(deck.wear,Math.min(.98,deck.stress/capacity));if(demand>capacity){failBeam(deck,'Excessive span load',demand,car);return}}
  }
  for(let pass=0;pass<10;pass++){for(const beam of beams){if(beam.broken)continue;const a=joints[beam.a],b=joints[beam.b],dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,rest=beam.rest,mat=materials[beam.material],strain=(len-rest)/rest;if(mat.tensionOnly&&strain<0)continue;const demand=mat.tensionOnly?Math.max(0,strain):Math.abs(strain),capacity=capacityFor(beam);beam.stress=Math.max(beam.stress,demand);beam.wear=Math.max(beam.wear,Math.min(.98,demand/capacity));if(demand>capacity){failBeam(beam,strain>=0?'Tension limit exceeded':'Compression limit exceeded',demand);return}const correction=(len-rest)/len*mat.stiffness||.82;let wa=a.fixed?0:1,wb=b.fixed?0:1,sum=wa+wb;if(sum){a.x+=dx*correction*wa/sum;a.y+=dy*correction*wa/sum;b.x-=dx*correction*wb/sum;b.y-=dy*correction*wb/sum}}
  }
