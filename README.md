@@ -23,7 +23,7 @@ Open the local address printed in PowerShell. You can also use Python, if instal
 - Click empty space inside the construction area to add a joint.
 - Joints snap to the visible 25-unit grid; the two fixed anchors align to the same grid.
 - Choose Erase, then click a beam or non-anchor joint. Erasing a joint also removes its attached beams. Right-click still erases as a shortcut.
-- Multiple members can connect the same two joints to reinforce a road span. Parallel members are drawn separately so they can be inspected and erased individually.
+- Each pair of joints can have one connecting member; add more joints to build a multi-member support structure.
 - Use Undo to remove the most recent beam.
 - Select Test bridge to send the truck along the connected bridge. Reset starts the level over.
 - Choose among Creek, Gorge, and Wide River in the level selector. Each level changes the crossing width, project budget, and truck load; completing a crossing unlocks the Next level button.
