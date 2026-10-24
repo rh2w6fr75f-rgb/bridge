@@ -26,6 +26,7 @@ Open the local address printed in PowerShell. You can also use Python, if instal
 - Multiple members can connect the same two joints to reinforce a road span. Parallel members are drawn separately so they can be inspected and erased individually.
 - Use Undo to remove the most recent beam.
 - Select Test bridge to send the truck along the connected bridge. Reset starts the level over.
+- Choose among Creek, Gorge, and Wide River in the level selector. Each level changes the crossing width, project budget, and truck load; completing a crossing unlocks the Next level button.
 - The truck drives only over a continuous path of concrete members. Wood, steel, cable, and aluminum can support the concrete deck but are not drivable surfaces.
 - Press Escape to deselect a joint.
 

@@ -11,6 +11,7 @@
   <main class="app">
     <header class="topbar">
       <div class="brand"><span class="brand-mark">BB</span><div><h1>Bridge Builder</h1><p>Structural design puzzle · Crossing 01</p></div></div>
+      <label class="level-picker" for="level-select"><span id="level-caption">LEVEL 1 OF 3</span><select id="level-select"><option value="0">1 · Creek</option><option value="1">2 · Gorge</option><option value="2">3 · Wide River</option></select></label>
       <div class="budget-box"><span id="budget-label">PROJECT BUDGET</span><strong id="budget">$1,000</strong></div>
     </header>
     <section class="game-panel" aria-label="Bridge construction game">
@@ -32,7 +33,7 @@
       <section id="failure-card" class="failure-card" hidden aria-live="assertive">
         <div class="failure-icon">!</div><div class="failure-copy"><strong id="failure-title">Member failure</strong><p id="failure-detail"></p><div class="wear-track"><span id="wear-bar"></span></div><small id="wear-label">Damage at failure</small></div>
       </section>
-      <div class="status-row"><div class="status-dot"></div><p id="message" role="status" aria-live="polite">Select an anchor, then add a joint or connect it to the other side.</p><span id="mode">BUILD MODE</span></div>
+      <div class="status-row"><div class="status-dot"></div><p id="message" role="status" aria-live="polite">Select an anchor, then add a joint or connect it to the other side.</p><button id="next-level" hidden>Next level</button><span id="mode">BUILD MODE</span></div>
     </section>
     <footer><span><b>BUILD</b> Joints snap to the 25-unit grid · Concrete is the drivable deck</span><span>Other materials support the deck · <b>ERASE</b> Click a member or joint</span></footer>
   </main>
