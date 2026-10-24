@@ -20,6 +20,7 @@
           <div class="config">
             <label class="thickness-label" for="thickness">THICKNESS<select id="thickness"><option value="1">Standard</option><option value="1.5">Reinforced</option><option value="2">Heavy</option></select></label>
             <button id="budget-mode" class="mode-toggle" aria-pressed="false">Unlimited budget <span>OFF</span></button>
+            <button id="eraser" class="tool-toggle" aria-pressed="false">Erase</button>
             <button id="undo" class="subtle" title="Undo last beam">Undo</button>
             <button id="test" class="primary">Test bridge</button>
             <button id="reset" class="subtle">Reset</button>
@@ -33,7 +34,7 @@
       </section>
       <div class="status-row"><div class="status-dot"></div><p id="message" role="status" aria-live="polite">Select an anchor, then add a joint or connect it to the other side.</p><span id="mode">BUILD MODE</span></div>
     </section>
-    <footer><span><b>BUILD</b> Select two joints to connect · Click open ground to add a joint</span><span>Right-click a beam to remove · <b>ESC</b> deselects</span></footer>
+    <footer><span><b>BUILD</b> Joints snap to the 25-unit grid · Select two joints to connect</span><span><b>ERASE</b> Click a member or joint · <b>ESC</b> deselects</span></footer>
   </main>
   <script src="src/main.js"></script>
 </body>

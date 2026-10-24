@@ -21,14 +21,15 @@ Open the local address printed in PowerShell. You can also use Python, if instal
 - Choose standard, reinforced, or heavy thickness. Thicker members cost more and use a higher game strength rating.
 - Toggle Unlimited budget to build without the cap; material spending remains tracked.
 - Click empty space inside the construction area to add a joint.
-- Right-click a beam to remove it, or use Undo to remove the most recent beam.
+- Joints snap to the visible 25-unit grid; the two fixed anchors align to the same grid.
+- Choose Erase, then click a beam or non-anchor joint. Erasing a joint also removes its attached beams. Right-click still erases as a shortcut.
+- Use Undo to remove the most recent beam.
 - Select Test bridge to send the truck along the connected bridge. Reset starts the level over.
 - Press Escape to deselect a joint.
-- Use the budget toggle for unlimited building; the material ledger continues to track costs.
 
 The material ledger shows total spend and each material's subtotal. Standard, reinforced, and heavy members have increasing cost and game strength. A failed beam is marked on the bridge; the report lists the member, midpoint, vehicle load position, failure mode, load-to-capacity comparison, and damage level.
 
-The physics are a lightweight, fixed-step Verlet and distance-constraint simulation built for game feel. Failure highlights the broken member and reports its location, load cause, capacity comparison, and damage. Material strength and cost are gameplay values, not engineering measurements.
+The physics are a lightweight, fixed-step Verlet and distance-constraint simulation built for game feel. Material strength and cost are gameplay values, not engineering measurements.
 
 ## Tech stack
 
