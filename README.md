@@ -25,6 +25,7 @@ Open the local address printed in PowerShell. You can also use Python, if instal
 - Choose Erase, then click a beam or non-anchor joint. Erasing a joint also removes its attached beams. Right-click still erases as a shortcut.
 - Use Undo to remove the most recent beam.
 - Select Test bridge to send the truck along the connected bridge. Reset starts the level over.
+- The truck drives only over a continuous path of concrete members. Wood, steel, cable, and aluminum can support the concrete deck but are not drivable surfaces.
 - Press Escape to deselect a joint.
 
 The material ledger shows total spend and each material's subtotal. Standard, reinforced, and heavy members have increasing cost and game strength. A failed beam is marked on the bridge; the report lists the member, midpoint, vehicle load position, failure mode, load-to-capacity comparison, and damage level.
